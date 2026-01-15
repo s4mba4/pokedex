@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex Animalier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>Pokédex Animalier</h1>
+                <p class="subtitle">Découvrez les animaux du monde</p>
+            </div>
+            <div class="header-stats">
+                <div class="stat-box">
+                    <span class="stat-label">Espèces</span>
+                    <span class="stat-value" id="speciesCount">0</span>
+                </div>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Rechercher un animal...">
+                <button id="searchBtn">🔍</button>
+            </div>
+        </header>
+
+        <!-- Filtres -->
+        <div class="filters">
+            <div class="filter-group">
+                <label for="familleFilter">Famille:</label>
+                <select id="familleFilter">
+                    <option value="">Toutes les familles</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="ratingFilter">Rating:</label>
+                <select id="ratingFilter">
+                    <option value="">Tous les ratings</option>
+                    <option value="1">★</option>
+                    <option value="2">★★</option>
+                    <option value="3">★★★</option>
+                    <option value="4">★★★★</option>
+                    <option value="5">★★★★★</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="sortFilter">Trier par:</label>
+                <select id="sortFilter">
+                    <option value="">Aucun tri</option>
+                    <option value="nom-asc">Nom (A-Z)</option>
+                    <option value="nom-desc">Nom (Z-A)</option>
+                    <option value="rating-asc">Rating (croissant)</option>
+                    <option value="rating-desc">Rating (décroissant)</option>
+                    <option value="difficulte-asc">Difficulté (croissant)</option>
+                    <option value="difficulte-desc">Difficulté (décroissant)</option>
+                    <option value="lieu" selected>Lieu (A-Z)</option>
+                </select>
+            </div>
+            <button id="resetFilters" class="reset-btn">Réinitialiser</button>
+            <button id="viewPokedexBtn" class="pokedex-view-btn">📖 Vue Pokédex</button>
+        </div>
+
+        <main>
+            <div id="pokemonGrid" class="pokemon-grid"></div>
+        </main>
+
+        <!-- Pokédex Modal -->
+        <div id="pokedexModal" class="pokedex-modal">
+            <div class="pokedex-container">
+                <div class="pokedex-screen">
+                    <div class="screen-top">
+                        <div class="pokemon-display">
+                            <img id="pokedexImage" src="" alt="" class="pokedex-image">
+                        </div>
+                        <div class="pokemon-header">
+                            <div class="pokemon-location">
+                                <span id="pokedexLocation"></span>
+                            </div>
+                            <div class="pokemon-number">
+                                <span id="pokedexNumber"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="screen-bottom">
+                        <h2 id="pokedexName" class="pokedex-name"></h2>
+                        
+                        <div class="pokedex-info">
+                            <div class="info-block">
+                                <strong>Famille</strong>
+                                <p id="pokedexFamille"></p>
+                            </div>
+                            <div class="info-block">
+                                <strong>Régime</strong>
+                                <p id="pokedexRegime"></p>
+                            </div>
+                            <div class="info-block">
+                                <strong>Taille</strong>
+                                <p id="pokedexTaille"></p>
+                            </div>
+                            <div class="info-block">
+                                <strong>Poids</strong>
+                                <p id="pokedexPoids"></p>
+                            </div>
+                        </div>
+
+                        <div class="pokedex-description">
+                            <p id="pokedexDescription"></p>
+                        </div>
+
+                        <div class="pokedex-stats">
+                            <div class="rating-stats">
+                                <strong>Rating</strong>
+                                <div id="pokedexRating" class="stars"></div>
+                            </div>
+                            <div class="difficulty-stats">
+                                <strong>Difficulté</strong>
+                                <div class="difficulty-bar-container">
+                                    <div id="pokedexDifficulty" class="difficulty-bar"></div>
+                                </div>
+                                <span id="pokedexDifficultyValue"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pokedex-buttons">
+                    <button id="prevBtn" class="nav-btn prev-btn">◀ PREV</button>
+                    <button id="closePokedex" class="close-btn">FERMER</button>
+                    <button id="nextBtn" class="nav-btn next-btn">NEXT ▶</button>
+                </div>
+                <div class="nav-hint">Utilisez les flèches ← → pour naviguer</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
