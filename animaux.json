@@ -19,7 +19,7 @@
         "Taille": "20 à 30 cm de long",
         "Poids": "400 à 700 g",
         "Difficulte" : 10,
-        "Rating" : 1,
+        "Rating" : 2,
         "Description": "L'écureuil roux est un petit mammifère agile que l'on trouve partout au Canada."
     },
     "dindon-sauvage":{
@@ -362,6 +362,17 @@
         "Difficulte" : 10,
         "Rating" : 1,
         "Description":"La sitelle à poitrine blanche est un petit oiseau agile connu pour sa capacité à grimper la tête en bas sur les troncs d'arbres. Elle se nourrit d'insectes, de graines et de noix."
+    },
+    "chouette-raye":{
+        "Nom":"Chouette rayée",
+        "Photo":"Longueuil - CA",
+        "Famille":"Oiseaux",
+        "Régime_alimentaire":"Carnivore",
+        "Taille":"25 à 30 cm de long",
+        "Poids":"200 à 300 g",
+        "Difficulte" : 70,
+        "Rating" : 3,
+        "Description":"La chouette rayée est un oiseau nocturne connu pour son plumage rayé et son cri distinctif. Elle se nourrit principalement de petits mammifères, d'oiseaux et d'insectes."
     }
 
 }
